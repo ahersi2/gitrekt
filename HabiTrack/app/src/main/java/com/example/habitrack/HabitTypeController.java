@@ -183,11 +183,10 @@ public class HabitTypeController {
     /**
      * Given an ID of a habit type, this method
      * deletes it from the local storage
-     * @param requestedID the ID of the HabitType you wish to delete
      */
-    public void deleteHabitType(Integer requestedID) {
-        HabitTypeStateManager.getHTStateManager().removeHabitType(requestedID);
-        saveToFile();
+    public void deleteHabitType(String esID) {
+        HabitTypeStateManager.getHTStateManager().removeHabitType(esID);
+        fileManager.save(fileManager.HT_METADATA_MODE);
     }
 
     /**

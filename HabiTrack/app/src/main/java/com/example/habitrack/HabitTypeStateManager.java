@@ -147,17 +147,15 @@ public class HabitTypeStateManager {
         return ht;
     }
 
-    public void removeHabitType(Integer requestedID){
-        for(Integer count = 0; count < ALL_HABITTYPES.size(); count++){
-            if(ALL_HABITTYPES.get(count).getID() == requestedID){
-                HabitType rmht = ALL_HABITTYPES.get(count);
-                ALL_HABITTYPES.remove(rmht);
+    public void removeHabitType(String esID){
+        for(HabitTypeMetadata htmd : htMetadataToday){
+            if(esID.equals(htmd.getEsID())){
+                htMetadataToday.remove(htmd);
             }
         }
-        for(Integer count = 0; count < HABITTYPES_FOR_TODAY.size(); count++){
-            if(HABITTYPES_FOR_TODAY.get(count).getID() == requestedID){
-                HabitType rmht = HABITTYPES_FOR_TODAY.get(count);
-                HABITTYPES_FOR_TODAY.remove(rmht);
+        for(HabitTypeMetadata htmd : htMetadataAll){
+            if(esID.equals(htmd.getEsID())){
+                htMetadataAll.remove(htmd);
             }
         }
     }

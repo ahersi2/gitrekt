@@ -72,6 +72,6 @@ public class HabitTypeMetadata {
 
     @Override
     public String toString() {
-        return esID + "|" + localID + "|" + title;
+        return title;
     }
 }

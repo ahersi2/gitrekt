@@ -140,5 +140,5 @@ public class HabitType {
     }
 
     @Override
-    public String toString(){return getID().toString() + " | " + getTitle();}
+    public String toString(){return getTitle();}
 }

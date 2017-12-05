@@ -153,15 +153,15 @@ public class NewHabitEventActivity extends AppCompatActivity {
             try {
                 inputStream = getContentResolver().openInputStream(imageUri);
                 photo = BitmapFactory.decodeStream(inputStream);
-                isPhoto = Boolean.TRUE;
-//                Integer imgSize = photo.getByteCount();
-//                if(imgSize > 65536){
-//                    Toast.makeText(NewHabitEventActivity.this, "Image is too large",
-//                            Toast.LENGTH_SHORT).show();
-//                    finish();
-//                } else {
-//                    isPhoto = Boolean.TRUE;
-//                }
+//                isPhoto = Boolean.TRUE;
+                Integer imgSize = photo.getByteCount();
+                if(imgSize > 65536){
+                    Toast.makeText(NewHabitEventActivity.this, "Image is too large",
+                            Toast.LENGTH_SHORT).show();
+                    finish();
+                } else {
+                    isPhoto = Boolean.TRUE;
+                }
 
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
